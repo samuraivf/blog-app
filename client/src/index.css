@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inconsolata', monospace, Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.background {
+  background-color: #F0F2F3;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.main {
+  padding-top: 4rem;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding-top: 4rem;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .main {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container {
+    width: 50%;
+  }
+}

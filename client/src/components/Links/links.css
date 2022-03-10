@@ -1,0 +1,95 @@
+.linkBox {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.navBox {
+    padding: 1rem 1rem 1rem 4rem;
+    display: flex;
+    align-items: flex-start;
+    position: fixed;
+    overflow-y: scroll;
+    width: 12rem;
+    height: 92vh;
+}
+
+.navBox::-webkit-scrollbar {
+    display: none;
+}
+
+.link {
+    text-decoration-line: none;
+    color: black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    padding: .5rem;
+    width: 11rem;
+    transition-duration: .3s;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link:hover {
+    background-color: #E3E8F1;
+}
+
+.activeLink {
+    text-decoration-line: none;
+    color: black;
+    margin: 0;
+    font-weight: 800;
+    background-color: #E3E8F1;
+}
+
+.img {
+    width: 1rem;
+    margin-right: .5rem;
+}
+
+
+@media screen and (max-width: 768px) {
+    .linkBox {
+        border-bottom: 2px solid #EBEBEB;
+        width: 100%;
+        padding-bottom: 1rem;
+        align-items: center;
+    }
+
+    .navBox {
+        display: none;
+        padding: 0;
+        height: 94vh;
+        overflow: hidden;
+        left: -100%;
+        transition: 0.3s;
+    }
+
+    .navBox.active {
+        display: flex;
+        z-index: 99;
+        left: 0;
+        background-color: #fff;
+        align-items: flex-start;
+        justify-content: center;
+        width: 90%;
+        padding: 5%;
+    }
+
+    .link {
+        text-align: center;
+        margin: .5rem 0;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .navBox.none {
+        display: none;
+    }
+}

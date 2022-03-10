@@ -1,0 +1,52 @@
+.ql-toolbar.ql-snow {
+    border: none;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Inconsolata', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    background-color: #F6F6F6;
+    border-radius: 5px;
+}
+
+.ql-container {
+    font-family: 'Inconsolata', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+}
+
+.ql-container.ql-snow {
+    border: none;
+}
+
+.editor {
+    height: 55vh;
+    width: 100%;
+    padding: 1rem 2rem;
+    overflow-y: hidden;
+}
+
+.ql-editor {
+    padding: 0;
+    font-size: 1.2rem;
+}
+
+.ql-editor.ql-blank::before {
+    font-style: normal;
+    font-weight: 500;
+}
+
+@media screen and (max-width: 480px) {
+    .ql-toolbar.ql-snow {
+        overflow: scroll;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        height: 8rem;
+        width: 90%;
+        margin: 0 5%;
+        justify-content: flex-start;
+    }
+
+    .editor {
+        height: 50vh;
+    }
+}

@@ -1,0 +1,27 @@
+export const CREATE_ACCOUNT = 'CREATE_ACCOUNT'
+export const CREATE_ACCOUNT_SUCCESS = 'CREATE_ACCOUNT_SUCCESS'
+
+export const LOGIN = 'LOGIN'
+export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
+
+export const ADD_INFO = 'ADD_INFO'
+export const ADD_INFO_SUCCESS = 'ADD_INFO_SUCCESS'
+
+export const GET_PROFILE = 'GET_PROFILE'
+export const GET_PROFILE_SUCCESS = 'GET_PROFILE_SUCCESS'
+
+export const LOGOUT = 'LOGOUT'
+export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS'
+
+export const CHECK_AUTH = 'CHECK_AUTH'
+export const CHECK_AUTH_SUCCESS = 'CHECK_AUTH_SUCCESS'
+
+export const FOLLOW_USER = 'FOLLOW_USER'
+
+export const FAIL = 'FAIL'
+
+export const FIND_USER = 'FIND_USER'
+export const FIND_USER_FROM_0_SUCCESS = 'FIND_USER_FROM_0_SUCCESS'
+export const FIND_USER_SUCCESS = 'FIND_USER_SUCCESS'
+
+export const SET_USERNAME = 'SET_USERNAME'
