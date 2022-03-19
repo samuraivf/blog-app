@@ -45,7 +45,7 @@ const MyPosts: React.FC = () => {
     }
 
     return (
-        <RootBox>
+        <RootBox data-testid='my-posts-page' >
             <Posts>
                 <SortPostBox>
                     <SortPostLink name='Latest' to='/my-posts' onClick={LoadLatestUserPostsAction} />

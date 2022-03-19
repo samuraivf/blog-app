@@ -65,53 +65,56 @@ const Account: React.FC = () => {
     }
 
     return (
-        <LoginBox>
+        <LoginBox data-testid='create-account-page'>
             <Box border='1px solid #ccc' borderRadius='10px' width='29rem'>
                 <Title marginTop='0' size='2rem'>Welcome to Blog</Title>
                 {isCreateAccount
                     ? <Title marginTop='.1rem' size='1.3rem'>Create Account</Title>
                     : <Title marginTop='.1rem' size='1.3rem'>Log In</Title>
                 }
-                <Form onSubmit={handleSubmit(onSubmit)}>
+                <Form data-testid='form' onSubmit={handleSubmit(onSubmit)}>
                     {isCreateAccount && (
-                        <InputBox>
+                        <InputBox data-testid='username-box'>
                             <InputDesc>Username</InputDesc>
                             <LoginInut
+                                data-testid='username'
                                 error={!!errors?.username}
                                 type="text"
                                 {...register('username', registerOptions.username)}
                             />
-                            <ErrorDesc>{errors?.username?.message}</ErrorDesc>
+                            <ErrorDesc role='alert'>{errors?.username?.message}</ErrorDesc>
                         </InputBox>
                     )}
 
                     <InputBox>
                         <InputDesc>Email</InputDesc>
                         <LoginInut
+                            data-testid='email'
                             error={!!errors?.email}
                             type="email"
                             {...register('email', registerOptions.email)}
                         />
-                        <ErrorDesc>{errors?.email?.message}</ErrorDesc>
+                        <ErrorDesc role='alert'>{errors?.email?.message}</ErrorDesc>
                     </InputBox>
 
                     <InputBox>
                         <InputDesc>Password</InputDesc>
                         <LoginInut
+                            data-testid='password'
                             error={!!errors?.password}
                             type="password"
                             {...register('password', registerOptions.password)}
                         />
-                        <ErrorDesc>{errors?.password?.message}</ErrorDesc>
+                        <ErrorDesc role='alert'>{errors?.password?.message}</ErrorDesc>
                     </InputBox>
                     {
                         fail && <ErrorDesc>{fail} (Invalid Credentials)</ErrorDesc>
                     }  
-                    <SubmitButton type='submit'>Continue</SubmitButton>
+                    <SubmitButton data-testid='submit-btn' type='submit'>Continue</SubmitButton>
                 </Form>
                 {isCreateAccount
-                    ? <InputDesc>Already have an account? <Change onClick={login}>Log in</Change></InputDesc>
-                    : <InputDesc>Don't have an account? <Change onClick={createAccount}>Create</Change></InputDesc>
+                    ? <InputDesc>Already have an account? <Change data-testid='change-login' onClick={login}>Log in</Change></InputDesc>
+                    : <InputDesc>Don't have an account? <Change data-testid='change-create' onClick={createAccount}>Create</Change></InputDesc>
                 }
             </Box>
         </LoginBox>

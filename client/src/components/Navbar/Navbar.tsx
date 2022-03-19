@@ -19,6 +19,8 @@ import {
     Bar
 } from './styles'
 
+import * as logoutIcon from '../../icons/logout.png'
+
 const Navbar: React.FC = () => {
     const [ query, setQuery ] = useState('')
     const dispatch = useDispatch()
@@ -48,7 +50,7 @@ const Navbar: React.FC = () => {
     }
 
     return (
-        <Nav>
+        <Nav data-testid='nav'>
             <NavBox>
                 <NavContainer>
                     <Hamburger onClick={onClickHamburger}>
@@ -56,7 +58,7 @@ const Navbar: React.FC = () => {
                         <Bar />
                         <Bar />
                     </Hamburger>
-                    <LogoLink onClick={() => history.push('/')}>BLOG</LogoLink>
+                    <LogoLink data-testid='logo-link' onClick={() => history.push('/')}>BLOG</LogoLink>
                     <SearchInput 
                         type="text" 
                         placeholder='Search for a post...' 
@@ -68,15 +70,15 @@ const Navbar: React.FC = () => {
                 <UserBox>
                     {user
                         ? (<>
-                            <CreatePost onClick={() => history.push('/write')}>Write a post</CreatePost>
+                            <CreatePost data-testid='create-post-link' onClick={() => history.push('/write')}>Write a post</CreatePost>
                             <Logout
-                                src='https://cdn-icons.flaticon.com/png/512/3889/premium/3889524.png?token=exp=1641739621~hmac=206e601ff6a8116701e2f20b8517f169'
+                                src={logoutIcon.default}
                                 onClick={() => dispatch(LogoutAction())}
                             />
                         </>
                         )
                         : (
-                            <CreateAccountLink onClick={() => history.push('/account')}>
+                            <CreateAccountLink data-testid='create-account-link' onClick={() => history.push('/account')}>
                                 Create Account
                             </CreateAccountLink>
                         )

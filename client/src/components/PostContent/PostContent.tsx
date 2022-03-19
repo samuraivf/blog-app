@@ -12,7 +12,6 @@ import {
 import { useAppSelector } from '../../redux/hooks'
 
 import { RootBox } from '../styled-components/RootBox'
-import { DeleteButton } from '../Post/styles'
 import {
     ReactionBox,
     Icon,
@@ -27,7 +26,8 @@ import {
     UserDescription,
     Key,
     Value,
-    LikeBox
+    LikeBox,
+    DeleteBtn
 } from './styles'
 
 import { EditIcons, LikeIcons, SaveIcons } from '../../utils/icons'
@@ -120,7 +120,7 @@ const PostContent: React.FC = () => {
                                 onClick={() => history.push(`/posts/edit/${currentPost.id}`)}
                                 marginBottom='1.5rem'
                             />
-                            <DeleteButton onClick={deletePost} />
+                            <DeleteBtn onClick={deletePost} />
                         </>
                     )}
                 </ReactionContainer>

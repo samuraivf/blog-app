@@ -33,6 +33,6 @@ export const getProfile = (id: number): Promise<AxiosResponse<Profile>> => API.g
 
 export const followUser = (id: number): Promise<AxiosResponse<boolean>> => API.get(`/user/follow/${id}`)
 
-export const findUser = (data: FindUserPayload): Promise<UserShortInfo[]> => {
+export const findUser = (data: FindUserPayload): Promise<AxiosResponse<UserShortInfo[]>> => {
     return API.get(`/user/find/${data.username}/${data.from}`)
 }

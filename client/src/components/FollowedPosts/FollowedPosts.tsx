@@ -24,7 +24,7 @@ const FollowedPosts: React.FC = () => {
     }, [user])
 
     return (
-        <RootBox>
+        <RootBox data-testid='followed-page'>
             <Posts>
                 <h2>Followed Posts</h2>
 

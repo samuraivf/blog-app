@@ -11,12 +11,12 @@ type PropTypes = {
 
 const User: React.FC<PropTypes> = ({ username, image, onClick }) => {
     return (
-        <UserBox>
+        <UserBox data-testid='user-box'>
             <UserContainer>
                 {
                     image
-                        ? <UserImage onClick={onClick} url={image} />
-                        : <UserImage onClick={onClick} url=''>{username[0]}</UserImage>
+                        ? <UserImage data-testid='user-image' onClick={onClick} url={image} />
+                        : <UserImage data-testid='user-image' onClick={onClick} url=''>{username[0]}</UserImage>
                 }
                 <Username onClick={onClick}>{username}</Username>
             </UserContainer>

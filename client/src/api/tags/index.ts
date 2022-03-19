@@ -5,7 +5,7 @@ import API from "../index"
 import { OverviewPost } from "../../redux/redux-iterfaces/posts/posts"
 import { Tag, LoadByTag } from "../../redux/redux-iterfaces/tags/tags"
 
-export const loadTags = (): Promise<Tag[]> => API.get('/tags')
+export const loadTags = (): Promise<AxiosResponse<Tag[]>> => API.get('/tags')
 
 export const getLatestPostsByTag = (
     data: LoadByTag

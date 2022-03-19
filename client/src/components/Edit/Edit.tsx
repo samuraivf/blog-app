@@ -28,6 +28,8 @@ import { toolbarOptions } from '../Write/quill-options'
 import NotFound from './../NotFound/NotFound'
 import LoadingPage from '../additional/LoadingPage/LoadingPage'
 
+import * as addImgIcon from '../../icons/add.png'
+
 import '../Write/styles.css'
 
 type ParamsType = {
@@ -162,7 +164,7 @@ const EditPost: React.FC = () => {
                             />
                             <UploadLabel htmlFor='img'>
                                 <UploadImage
-                                    src='https://cdn-icons-png.flaticon.com/512/16/16410.png'
+                                    src={addImgIcon.default}
                                     alt='Upload Image'
                                 />
                             </UploadLabel>

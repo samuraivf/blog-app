@@ -26,6 +26,8 @@ import {
 import { toolbarOptions } from './quill-options'
 import Quill from 'quill'
 
+import * as addImgIcon from '../../icons/add.png'
+
 import './styles.css'
 
 const WritePost: React.FC = () => {
@@ -112,7 +114,7 @@ const WritePost: React.FC = () => {
 
     return (
         <>
-            <WriteBox>
+            <WriteBox data-testid='create-post-page'>
                 <Container>
                     <InputBox>
                         <TitleInput
@@ -129,7 +131,7 @@ const WritePost: React.FC = () => {
                             <UploadBox>
                                 <UploadLabel htmlFor='img'>
                                     <UploadImage
-                                        src='https://cdn-icons-png.flaticon.com/512/16/16410.png'
+                                        src={addImgIcon.default}
                                         alt='Upload Image'
                                     />
                                 </UploadLabel>

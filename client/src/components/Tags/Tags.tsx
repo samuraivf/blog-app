@@ -32,7 +32,7 @@ const Tags: React.FC = () => {
     }
 
     return (
-        <RootBox>
+        <RootBox data-testid='tags-page' >
             <MainContainer>
                 <Title>TOP 100 Most Popular Tags</Title>
                 <TagsContainer>

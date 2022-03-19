@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { IImage, IUserBox, IIcon } from '../styled-components/component-interfaces'
 
+import * as deleteIcon from '../../icons/bin.png'
+import * as deleteIconHover from '../../icons/bin-hover.png'
+
 export const PostBox = styled.div`
     background-color: #fff;
     border-radius: 5px;
@@ -188,7 +191,7 @@ export const Save = styled.div<IIcon>`
 
 export const DeleteButton = styled.button`
     cursor: pointer;
-    background: url(https://cdn-icons-png.flaticon.com/512/1828/1828595.png);
+    background: url(${deleteIcon.default});
     background-position: center center;
     background-repeat: no-repeat;
     background-color: #FFF;
@@ -200,6 +203,6 @@ export const DeleteButton = styled.button`
     transition-duration: .3s;
 
     &:hover {
-        background-image: url(https://cdn-icons-png.flaticon.com/512/1828/1828843.png);
+        background-image: url(${deleteIconHover.default});
     }
 `

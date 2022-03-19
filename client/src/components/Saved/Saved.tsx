@@ -31,7 +31,7 @@ const Saved: React.FC = () => {
     }
 
     return (
-        <RootBox>
+        <RootBox data-testid='saved-page'>
             <Posts>
                 <h2>Saved Posts</h2>
 

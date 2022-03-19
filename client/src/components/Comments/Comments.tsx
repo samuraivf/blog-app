@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 
-import { likeChecker, likeIconChecker } from '../../utils'
+import { lengthChecker, likeIconChecker } from '../../utils'
 import { LikeIcons } from '../../utils/icons'
 
 import {
@@ -113,7 +113,7 @@ const Comments: React.FC<CommentsProps> = ({ postId, comments }) => {
                                             url={likeIconChecker(comment.likes, userId)}
                                             urlHover={LikeIcons.liked}
                                         />
-                                        {likeChecker(comment.likes.length)}
+                                        {lengthChecker(comment.likes.length, 'Like', 'Likes')}
                                     </Likes>
                                     {
                                         userId && comment.author.id === userId

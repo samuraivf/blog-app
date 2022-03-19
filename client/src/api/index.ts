@@ -2,9 +2,11 @@ import axios from "axios"
 
 import { AccountResponse } from '../redux/redux-iterfaces/account/account'
 
+export const BASE_URL = 'http://localhost:5000/' 
+
 const API = axios.create({ 
     withCredentials: true,
-    baseURL: 'http://localhost:5000/' 
+    baseURL: BASE_URL,
 })
 
 API.interceptors.request.use(req => {

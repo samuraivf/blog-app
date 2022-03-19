@@ -1,7 +1,9 @@
 import styled from 'styled-components'
+
 import { IIcon } from '../styled-components/component-interfaces'
 import { UserImage } from '../Post/styles'
 import { Button } from '../styled-components/Button'
+import { DeleteButton } from '../Post/styles'
 
 export const ReactionBox = styled.aside`
     display: flex;
@@ -40,6 +42,10 @@ export const Icon = styled.div<IIcon & { marginBottom?: string }>`
     @media screen and (max-width: 768px) {
         margin-bottom: 0;
     }
+`
+
+export const DeleteBtn = styled(DeleteButton)`
+    background-color: #F0F2F3;
 `
 
 export const LikeBox = styled.div`

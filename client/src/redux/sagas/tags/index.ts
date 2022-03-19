@@ -20,7 +20,7 @@ import {
     GET_POSTS_BY_TAG_FROM_0_SUCCESS
 } from './../../redux-iterfaces/tags/constants'
 
-function* checkPosts(from: number, data: any) {
+export function* checkPosts(from: number, data: any) {
     if (!from) {
         yield put({
             type: GET_POSTS_BY_TAG_FROM_0_SUCCESS,
@@ -34,7 +34,7 @@ function* checkPosts(from: number, data: any) {
     }
 }
 
-function* getTagsSaga() {
+export function* getTagsSaga() {
     try {
         const { data } = yield call(loadTags)
 
@@ -49,7 +49,7 @@ function* getTagsSaga() {
     }
 }
 
-function* getLatestPostsByTagSaga(action: SagaAction) {
+export function* getLatestPostsByTagSaga(action: SagaAction) {
     try {
         const { data } = yield call(getLatestPostsByTag, action.payload)
 
@@ -61,7 +61,7 @@ function* getLatestPostsByTagSaga(action: SagaAction) {
     }
 }
 
-function* getOldestPostsByTagSaga(action: SagaAction) {
+export function* getOldestPostsByTagSaga(action: SagaAction) {
     try {
         const { data } = yield call(getOldestPostsByTag, action.payload)
 
@@ -73,7 +73,7 @@ function* getOldestPostsByTagSaga(action: SagaAction) {
     }
 }
 
-function* getPopularPostsByTagSaga(action: SagaAction) {
+export function* getPopularPostsByTagSaga(action: SagaAction) {
     try {
         const { data } = yield call(getPopularPostsByTag, action.payload)
 

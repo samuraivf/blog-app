@@ -8,7 +8,7 @@ import { FollowUserAction, AddInfoAction, GetProfileAction } from './../../redux
 import { registerOptions } from './registerOptions'
 import { SetLoadingTrueAction } from '../../redux/reducers/posts/actions'
 
-import { commentsChecker, postChecker } from '../../utils'
+import { lengthChecker } from '../../utils'
 import { EditIcons } from '../../utils/icons'
 import * as utils from '../../utils/set-image'
 
@@ -49,6 +49,12 @@ import { Icon } from '../Post/styles'
 import Post from '../Post/Post'
 import NotFound from './../NotFound/NotFound'
 import LoadingPage from '../additional/LoadingPage/LoadingPage'
+
+import * as commentIcon from '../../icons/bubble-chat.png'
+import * as postIcon from '../../icons/post.png'
+import * as joinIcon from '../../icons/add-user.png'
+import * as locationIcon from '../../icons/location-pin.png'
+import * as addImgIcon from '../../icons/add.png'
 
 type FormValues = {
     username: string
@@ -125,7 +131,7 @@ const User: React.FC = () => {
     }
 
     if (profile) return (
-        <RootBox>
+        <RootBox data-testid='account-page' >
             <UserBox>
                 <UserBackground />
             {
@@ -137,7 +143,7 @@ const User: React.FC = () => {
                             <BigUserImage url={image}>
                                 <UploadLabel htmlFor='img'>
                                     <UploadImage
-                                        src='https://cdn-icons-png.flaticon.com/512/16/16410.png'
+                                        src={addImgIcon.default}
                                         alt='Upload Image'
                                     />
                                 </UploadLabel>
@@ -165,7 +171,7 @@ const User: React.FC = () => {
                             <UserErrorDesc>{errors?.description?.message}</UserErrorDesc>
                             <UserInfoBox>
                                 <InfoBox>
-                                    <SmallIcon src='https://cdn-icons.flaticon.com/png/512/3082/premium/3082383.png?token=exp=1644162542~hmac=21d45c7060e94de13f3522736585e838' />
+                                    <SmallIcon src={locationIcon.default} />
                                     <UserLocationInput
                                         placeholder='Add Your Location'
                                         defaultValue={profile.location}
@@ -174,7 +180,7 @@ const User: React.FC = () => {
                                     />
                                 </InfoBox>
                                 <InfoBox>
-                                    <SmallIcon src='https://cdn-icons.flaticon.com/png/512/2342/premium/2342329.png?token=exp=1644163266~hmac=3b86b048b7ba0059c135e2aaeed22b23' />
+                                    <SmallIcon src={joinIcon.default} />
                                     <InfoValue>Joined on {
                                     new Date(profile.createdAt).toLocaleString(
                                         'en-US', 
@@ -217,11 +223,11 @@ const User: React.FC = () => {
                         <UserDescription>{profile.description}</UserDescription>
                         <UserInfoBox>
                             <InfoBox>
-                                <SmallIcon src='https://cdn-icons.flaticon.com/png/512/3082/premium/3082383.png?token=exp=1644162542~hmac=21d45c7060e94de13f3522736585e838' />
+                                <SmallIcon src={locationIcon.default} />
                                 <InfoValue>{profile.location || 'No Data'}</InfoValue>
                             </InfoBox>
                             <InfoBox>
-                                <SmallIcon src='https://cdn-icons.flaticon.com/png/512/2342/premium/2342329.png?token=exp=1644163266~hmac=3b86b048b7ba0059c135e2aaeed22b23' />
+                                <SmallIcon src={joinIcon.default} />
                                 <InfoValue>Joined on {
                                     new Date(profile.createdAt).toLocaleString(
                                         'en-US', 
@@ -245,12 +251,16 @@ const User: React.FC = () => {
                 <Information>
                     <ShortInfo>
                         <ShortInfoLine>
-                            <Icon src='https://cdn-icons-png.flaticon.com/512/3596/3596817.png' />
-                            <ShortInfoText>{postChecker(profile.posts.length)} published</ShortInfoText>
+                            <Icon src={postIcon.default} />
+                            <ShortInfoText>
+                                {lengthChecker(profile.posts.length, 'Post', "Posts")} published
+                            </ShortInfoText>
                         </ShortInfoLine>
                         <ShortInfoLine>
-                            <Icon src='https://cdn-icons.flaticon.com/png/512/3031/premium/3031126.png?token=exp=1641739757~hmac=2b7c33b43a7f58edb16d3f5cbb1fb2c3' />
-                            <ShortInfoText>{commentsChecker(profile.comments)} written</ShortInfoText>
+                            <Icon src={commentIcon.default} />
+                            <ShortInfoText>
+                                {lengthChecker(profile.comments, 'Comment', 'Comments')} written
+                            </ShortInfoText>
                         </ShortInfoLine>
                     </ShortInfo>
                     <PostsBox>

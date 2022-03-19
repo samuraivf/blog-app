@@ -45,7 +45,7 @@ const Home: React.FC = () => {
     }
 
     return (
-        <RootBox>
+        <RootBox data-testid='home-page'>
             <Posts>
                 <SortPostBox>
                     <SortPostLink

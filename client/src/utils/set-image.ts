@@ -4,7 +4,7 @@ export const readImage = (e: React.FormEvent<HTMLInputElement>): Promise<string>
     const file = (e.target as HTMLInputElement)
     const reader = new FileReader()
 
-    return new Promise((res, rej) => {
+    return new Promise((res) => {
         reader.onload = () => {
             res(reader.result as string)
         }

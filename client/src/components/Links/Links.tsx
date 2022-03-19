@@ -9,6 +9,12 @@ import FindTag from './../additional/FindTag/FindTag'
 import FindUser from '../additional/FindUser/FindUser'
 import FindPost from '../additional/FindPost/FindPost'
 
+import * as homeIcon from '../../icons/home.png'
+import * as postIcon from '../../icons/post.png'
+import * as tagIcon from '../../icons/price-tag.png'
+import * as accountIcon from '../../icons/user.png'
+import * as followedIcon from '../../icons/add-user.png'
+
 import './links.css'
 
 const Links: React.FC = () => {
@@ -46,36 +52,36 @@ const Links: React.FC = () => {
     }
 
     return (
-        <div className={`navBox ${classname}`}>
+        <div data-testid='links' className={`navBox ${classname}`}>
             <div className='links' >
                 <div className='linkBox'>
-                    <NavLink to='/' className='link' activeClassName='activeLink' exact>
-                        <img className='img' src="https://cdn-icons-png.flaticon.com/256/1946/1946436.png" alt="" />
+                    <NavLink data-testid='home-link' to='/' className='link' activeClassName='activeLink' exact>
+                        <img className='img' src={homeIcon.default} alt="" />
                         Home
                     </NavLink>
 
-                    <NavLink to='/tags' className='link' activeClassName='activeLink' >
-                        <img className='img' src="https://cdn-icons.flaticon.com/png/512/721/premium/721550.png?token=exp=1641739814~hmac=dcc4528abb40e53d356cdc5d9785efa6" alt="" />
+                    <NavLink to='/tags' data-testid='tags-link' className='link' activeClassName='activeLink' >
+                        <img className='img' src={tagIcon.default} alt="" />
                         Tags
                     </NavLink>
 
-                    <NavLink to={checkPath('/my-posts')} className='link' activeClassName='activeLink' >
-                        <img className='img' src="https://cdn-icons-png.flaticon.com/512/3596/3596817.png" alt="" />
+                    <NavLink data-testid='my-posts-link' to={checkPath('/my-posts')} className='link' activeClassName='activeLink' >
+                        <img className='img' src={postIcon.default} alt="" />
                         My Posts
                     </NavLink>
 
-                    <NavLink to={checkPath('/saved')} className='link' activeClassName='activeLink' exact>
+                    <NavLink data-testid='saved-link' to={checkPath('/saved')} className='link' activeClassName='activeLink' exact>
                         <img className='img' src={SaveIcons.saved} alt="" />
                         Saved
                     </NavLink>
 
-                    <NavLink to={checkPath(`/user/${user?.id}`)} className='link' activeClassName='activeLink' exact>
-                        <img className='img' src='https://cdn-icons-png.flaticon.com/512/1077/1077114.png' alt="" />
+                    <NavLink data-testid='account-link' to={checkPath(`/user/${user?.id}`)} className='link' activeClassName='activeLink' exact>
+                        <img className='img' src={accountIcon.default} alt="" />
                         Account
                     </NavLink>
 
-                    <NavLink to={checkPath('/followed-posts')} className='link' activeClassName='activeLink' exact>
-                        <img className='img' src='https://cdn-icons.flaticon.com/png/512/3756/premium/3756602.png?token=exp=1645795911~hmac=aa68d0192dfe25ad3d61b72dd1cb9b19' alt="" />
+                    <NavLink data-testid='followed-link' to={checkPath('/followed-posts')} className='link' activeClassName='activeLink' exact>
+                        <img className='img' src={followedIcon.default} alt="" />
                         Followed
                     </NavLink>
                 </div>

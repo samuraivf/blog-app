@@ -2,7 +2,7 @@ import React from 'react'
 import { useHistory } from 'react-router'
 import { useDispatch } from 'react-redux'
 
-import { commentsChecker, likeChecker } from '../../utils/'
+import { lengthChecker } from '../../utils/'
 import { LikeIcons, SaveIcons } from '../../utils/icons'
 import { saveIconChecker } from './../../utils/index'
 
@@ -31,7 +31,9 @@ import {
     Buttons
 } from './styles'
 
-export interface PostProps {
+import * as commentIcon from '../../icons/bubble-chat.png'
+
+export type PostProps = {
     post: OverviewPost,
     setTag?: (tagName: string) => void
 }
@@ -100,11 +102,19 @@ const Post: React.FC<PostProps> = ({ post, setTag }) => {
                     <ReactionBox>
                         <ReviewBox onClick={readPost}>
                             <Icon src={LikeIcons.notLiked} />
-                            {likeChecker(post.likes.length)}
+                            {
+                                window.screen.width <= 480
+                                    ? post.likes.length
+                                    : lengthChecker(post.likes.length, 'Like', 'Likes')
+                            }
                         </ReviewBox>
                         <ReviewBox onClick={readPost}>
-                            <Icon src='https://cdn-icons.flaticon.com/png/512/3031/premium/3031126.png?token=exp=1641739757~hmac=2b7c33b43a7f58edb16d3f5cbb1fb2c3' />
-                            {commentsChecker(post.comments.length)}
+                            <Icon src={commentIcon.default} />
+                            {
+                                window.screen.width <= 480
+                                    ? post.comments.length
+                                    : lengthChecker(post.comments.length, 'Comment', 'Comments')
+                            }
                         </ReviewBox>
                     </ReactionBox>
                     {
