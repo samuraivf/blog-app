@@ -1,7 +1,9 @@
 import { Controller, Get, Req } from '@nestjs/common'
-import { TagsService } from './tags.service'
 import { Request } from 'express'
+
 import { DBOrder } from 'src/enums/db-order'
+
+import { TagsService } from './tags.service'
 
 @Controller('/tags')
 export class TagsController {

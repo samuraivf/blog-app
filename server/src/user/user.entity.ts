@@ -1,4 +1,3 @@
-import { Post } from 'src/posts/posts.entity'
 import {
     Column,
     Entity,
@@ -9,6 +8,8 @@ import {
     JoinTable,
     CreateDateColumn,
 } from 'typeorm'
+
+import { Post } from '../posts/posts.entity'
 import { Token } from '../auth/tokens/token.entity'
 import { Comment } from './../comments/comments.entity'
 

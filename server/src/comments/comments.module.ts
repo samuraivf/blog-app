@@ -1,7 +1,9 @@
 import { Module } from '@nestjs/common'
+
+import { Comment } from './comments.entity'
+
 import { TypeOrmModule } from '@nestjs/typeorm'
 import { CommentsService } from './comments.service'
-import { Comment } from './comments.entity'
 
 @Module({
     imports: [TypeOrmModule.forFeature([Comment])],

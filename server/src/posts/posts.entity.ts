@@ -7,8 +7,8 @@ import {
     ManyToOne,
     OneToMany,
     PrimaryGeneratedColumn,
-    UpdateDateColumn,
 } from 'typeorm'
+
 import { User } from './../user/user.entity'
 import { Tag } from './../tags/tags.entity'
 import { Comment } from './../comments/comments.entity'

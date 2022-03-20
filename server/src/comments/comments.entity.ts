@@ -5,7 +5,8 @@ import {
     ManyToOne,
     CreateDateColumn,
 } from 'typeorm'
-import { Post } from 'src/posts/posts.entity'
+
+import { Post } from '../posts/posts.entity'
 import { User } from './../user/user.entity'
 
 @Entity()
