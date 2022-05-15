@@ -2,7 +2,7 @@ import axios from "axios"
 
 import { AccountResponse } from '../redux/redux-iterfaces/account/account'
 
-export const BASE_URL = '/api' 
+export const BASE_URL = 'http://localhost:5000/' 
 
 const API = axios.create({ 
     withCredentials: true,
@@ -27,7 +27,7 @@ API.interceptors.response.use(config => {
         originalRequest._isRetry = true
 
         const response = await axios.get<AccountResponse>(
-            '/api/auth/refresh', 
+            'http://localhost:5000/auth/refresh', 
             { withCredentials: true }
         )
         if (response.data) {
