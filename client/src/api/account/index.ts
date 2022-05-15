@@ -16,7 +16,7 @@ export const apiCall = async (
     url: string
 ) => {
         return axios.post(
-            `http://localhost:5000/auth/${url}`, 
+            `/api/auth/${url}`, 
             data,
             { withCredentials: true }
             ).then((response) => response)
