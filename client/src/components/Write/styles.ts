@@ -130,6 +130,7 @@ export const InputBox = styled.div`
 export const Container = styled.div`
     width: 95%;
     border: 1px solid #ccc;
+    margin-bottom: 4rem;
 `
 
 export const PublishBox = styled.div`

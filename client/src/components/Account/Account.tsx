@@ -40,10 +40,6 @@ const Account: React.FC = () => {
         if (user) {
             history.push(`/user/${user.id}`)
         }
-
-        if (localStorage.getItem('token')) {
-            history.push('/')
-        }
     }, [user])
 
     const createAccount = () => {

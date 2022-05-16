@@ -18,7 +18,7 @@ export const ReactionBox = styled.aside`
         background-color: #FFF;
         border-top: 1px solid #ccc;
         width: 100%;
-        height: 5rem;
+        padding: .5rem;
         justify-content: space-around;
         z-index: 1;
     }
